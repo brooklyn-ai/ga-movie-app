@@ -67,13 +67,112 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 9, ../sass/screen.sass */
+/* line 8, ../sass/screen.sass */
+body, html {
+  padding: 0;
+  margin: 0;
+  font-size: 1.2em;
+  font-family: sans-serif;
+  color: #454545;
+  background-color: whitesmoke;
+  -webkit-font-smoothing: antialiased;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+/*modular or tpypgraphic scale: 'classic'  (r = 2, n = 5) */
+/* line 22, ../sass/screen.sass */
+h1 {
+  font-size: 2em;
+}
+
+/* line 24, ../sass/screen.sass */
+h2 {
+  font-size: 1.7411em;
+}
+
+/* line 26, ../sass/screen.sass */
+h3 {
+  font-size: 1.5157em;
+}
+
+/* line 28, ../sass/screen.sass */
+h4 {
+  font-size: 1.3195em;
+}
+
+/* line 30, ../sass/screen.sass */
+h5 {
+  font-size: 1.1487em;
+}
+
+/* line 32, ../sass/screen.sass */
+body, p, ul {
+  font-size: 1em;
+}
+
+/* line 34, ../sass/screen.sass */
+sup, sub {
+  font-size: 0.8706em;
+}
+
+/* line 37, ../sass/screen.sass */
+article {
+  background-color: white;
+  width: 80%;
+  margin-left: 10%;
+  box-shadow: 0 20px 10px -10px rgba(150, 150, 150, 0.8);
+}
+
+/* line 43, ../sass/screen.sass */
+img {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* line 50, ../sass/screen.sass */
+h2 {
+  font-size: 1.33em;
+  margin: -1em 8% 0 8%;
+  padding-top: 22px;
+  cursor: default;
+}
+
+/* line 57, ../sass/screen.sass */
+p {
+  line-height: 1.2;
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 1px);
+  background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 1px);
+  background-size: 100% 1.2em;
+  background-position: 0 1em;
+  background-origin: content-box;
+  font-size: 100%;
+  padding: 1em auto;
+  margin: 0 auto;
+  width: 78%;
+  cursor: default;
+}
+
+/* line 73, ../sass/screen.sass */
+a {
+  text-decoration: none;
+  color: #7ca065;
+  cursor: pointer;
+}
+
+/* line 81, ../sass/screen.sass */
 section {
   margin: auto;
   width: 80%;
   text-align: center;
 }
-/* line 13, ../sass/screen.sass */
+/* line 85, ../sass/screen.sass */
 section form {
   outline: 2px solid #434343;
   margin-top: 8%;
