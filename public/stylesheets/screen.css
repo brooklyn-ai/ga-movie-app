@@ -66,3 +66,15 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
+
+/* line 9, ../sass/screen.sass */
+section {
+  margin: auto;
+  width: 80%;
+  text-align: center;
+}
+/* line 13, ../sass/screen.sass */
+section form {
+  outline: 2px solid #434343;
+  margin-top: 8%;
+}

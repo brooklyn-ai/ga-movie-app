@@ -3,8 +3,8 @@ const request = require('request');
 const test = require('tape');
 
 // Start the app
-const env = Object.assign({}, process.env, {PORT: 3000});
-const child = spawn('node', ['server.js'], {env});
+const env = Object.assign({}, process.env, {PORT: 5000});
+const child = spawn('node', ['index.js'], {env});
 
 test('responds to requests', (t) => {
   t.plan(4);
@@ -31,11 +31,10 @@ test('responds to requests', (t) => {
 //Origional code 
 
 
-// var express = require('express');
-// var app = express();
 
-// app.set ('port', (process.env.PORT || 3000));
-// app.use(express.static(path.join(__dirname, '/public')));
+
+ //app.set ('port', (process.env.PORT || 5000));
+//app.use(express.static(path.join(__dirname, '/public')));
 
 // var fs = require('fs');
 // var path = require('path');
