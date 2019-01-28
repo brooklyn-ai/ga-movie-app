@@ -1,8 +1,8 @@
 {
   "name": "Movie Info App",
   "description": "A barebones Node.js app using Express 4",
-  "repository": "https://github.com/heroku/node-js-getting-started",
-  "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
+  "repository": "https://github.com/brooklyn-ai/ga-movie-app",
+  "logo": "https://raw.github.com/generalassembly/ga-ruby-on-rails-for-devs/master/images/ga.png",
   "keywords": ["node", "express", "heroku"],
   "image": "heroku/nodejs"
 }
