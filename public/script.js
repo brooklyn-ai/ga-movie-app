@@ -26,17 +26,26 @@
                     if (index < 2) {
                         $.getJSON("https://www.omdbapi.com/?", { apikey: "33b87803", i: value.imdbID }, function(movieData) {
                             if (movieData) {
+                                value.imdbID
                                 results += '<div class="result row p-1">'
                                 results += '<div class="col-sm-5"><img src=' + movieData.Poster + ' style="width: 170px; height: 250px;" /></div>'
-                                results += '<div class="col-sm-7 text-left">'
-                                results += '<div class="movie-title">'+ highlight(movieData.Title, $(".search-input").val()) +' ('+ movieData.Year +')</div>'
+                                results += '<div class="col-sm-7 text-left"> <br>'
+
+                               
+
+                                results += '<div class="movie-title">'+ highlight(movieData.Title, $(".search-input").val()) +' ('+ movieData.Year +')</div> <br>'
+
+                                // create identifier for favorites via imdbID
+                                results += '<button onclick="addToFav(this.value)" class="favorite-div" id="myFav" value="' + movieData.Title + '" > Add to Favorites </button> <br>'
+
+
                                 results += '<div class="rating-div"><span class="h4 rating">'+ movieData.imdbRating +'</span>/10</div>'
                                 results += '<div class="my-3">'
-                                results += '<div>Language: '+ movieData.Language + '</div>'
-                                results += '<div>Stars: '+ movieData.Actors.split(",").slice(0, 3) + ' | <a href="#">Show All »</a></div>'
+                                results += '<div>Language: '+ movieData.Language + '</div> <br>'
+                                results += '<div>Stars: '+ movieData.Actors.split(",").slice(0, 3) + '</div> <br>'
                                 results += '</div>'
                                 results += '<div class="my-3">'
-                                results += '<div>'+ movieData.Plot.slice(0, 100) + '... <a href="#">Details »</a></div>'
+                                results += '<div>Plot: '+ movieData.Plot.slice(0, 200) + '</div>'
                                 results += '</div>'
                                 results += '</div>'
                                 results += "</div>"
@@ -55,53 +64,11 @@
             }
         });
     });
-    
-    $("#show-more").click(function(e) {
-        e.preventDefault()
-        var search = $(".search-input").val()
-        let listResults = ""
-        $("#search").hide()
-        $("#list").show()
-        $("#search-term").html("Results for: " + search)
-        $.getJSON("https://www.omdbapi.com/?", { apikey: "33b87803", s: search }, function(listData) {
-            if (/Mobi|Android/i.test(navigator.userAgent)) {
-                $("#list-count").html("(" + listData.totalResults + ")")
-            } else {
-                $("#list-count").html(listData.totalResults + " movie found")
-            }
-            if (listData.Search !== undefined) {
-                $.each(listData.Search, function(index, value) {
-                    $.getJSON("https://www.omdbapi.com/?", { apikey: "33b87803", i: value.imdbID }, function(listMovieData) {
-                        if (listMovieData) {
-                            listResults += '<div class="list-result col-6 p-3">'
-                            listResults += '<div class="row">'
-                            listResults += '<div class="col-md-6"><img src="' + listMovieData.Poster + '" style="width: 100%;" /></div>'
-                            listResults += '<div class="col-md-6 text-left">'
-                            listResults += '<div class="movie-title">'+ highlight(listMovieData.Title, $(".search-input").val()) +' ('+ listMovieData.Year +')</div>'
-                            listResults += '<div class="rating-div"><span class="h4 rating">'+ listMovieData.imdbRating +'</span>/10</div>'
-                            listResults += '<div class="my-3">'
-                            listResults += '<div>Language: '+ listMovieData.Language + '</div>'
-                            listResults += '<div>Stars: '+ listMovieData.Actors.split(",").slice(0, 3) + ' | <a href="#">Show All »</a></div>'
-                            listResults += '</div>'
-                            listResults += '<div class="my-3">'
-                            listResults += '<div>'+ listMovieData.Plot.slice(0, 100) + '... <a href="#">Details »</a></div>'
-                            listResults += '</div>'
-                            listResults += '</div>' // col-6 end
-                            listResults += "</div>" // row end
-                            listResults += "</div>" // list-result col-6 end
-                            $("#list-results").html(listResults)
-                            $(".list-result:odd:not(:last-child)").after("<div class='col-12'><hr></div>")
-                        }
-                    })
-                });
-            }
-        });
-    });
-
-    $("#searchAgain").click(function() {
-        $("#search").show()
-        $("#list").hide()
-        $("#result-list").hide()
-        $(".search-input").val("")
-    });
 });
+
+
+function addToFav(val){
+  console.log(val);
+  
+}
+
